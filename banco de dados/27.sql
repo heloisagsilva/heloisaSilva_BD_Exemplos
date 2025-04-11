@@ -1,0 +1,1 @@
+select all nr_depto from colaborador_tarde order by Nr_Depto

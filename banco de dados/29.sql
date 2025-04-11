@@ -1,0 +1,1 @@
+select * from colaborador_tarde where (salario >= 80000.00) and (salario <= 90000.00) order by Primeiro_Nome

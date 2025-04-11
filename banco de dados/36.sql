@@ -1,0 +1,1 @@
+select nome_completo, salario, data_admissao from colaborador_tarde where extract(month from data_admissao) = 8

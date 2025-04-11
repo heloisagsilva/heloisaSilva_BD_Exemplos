@@ -1,0 +1,1 @@
+select primeiro_nome, Data_Admissao from colaborador_tarde

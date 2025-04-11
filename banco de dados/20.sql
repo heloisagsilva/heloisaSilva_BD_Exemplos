@@ -1,0 +1,1 @@
+select * from colaborador_tarde order by Primeiro_Nome

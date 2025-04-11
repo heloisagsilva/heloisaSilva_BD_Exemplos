@@ -1,0 +1,1 @@
+select count(*) as nr_depto from colaborador_tarde
