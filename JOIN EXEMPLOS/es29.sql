@@ -1,0 +1,1 @@
+select * from produto, item where quantidade >=12 
