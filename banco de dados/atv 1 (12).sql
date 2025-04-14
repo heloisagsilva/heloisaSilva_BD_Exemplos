@@ -1,0 +1,1 @@
+select nome, cidade from cliente where (cidade,sexo)  = ('guarapuava', 'm')

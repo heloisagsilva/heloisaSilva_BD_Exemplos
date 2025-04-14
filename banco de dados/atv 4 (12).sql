@@ -1,0 +1,1 @@
+select sexo, cidade from cliente where cidade like 'g%' or cidade like 'c%';
