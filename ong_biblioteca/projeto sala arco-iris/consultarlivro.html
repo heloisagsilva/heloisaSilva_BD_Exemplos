@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultar Livros - Sala Arco-íris</title>
+  <link rel="stylesheet" type="text/css" href="css/css_consultarlivro.css"/>
+  <style>
+    
+    /* Modal */
+    #modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    #modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 800px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+
+    #close-modal {
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #modal-body img {
+      float: left;
+      margin-right: 20px;
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #modal-body {
+      overflow: hidden;
+    }
+
+    #modal-body p {
+      text-align: justify;
+      line-height: 1;
+      max-width: 720px; 
+      margin: 10 auto; 
+    }
+
+    #modal-body ul {
+    margin-top: 0;
+    padding-left: 20px;
+    margin-left: 10px;
+    } 
+
+    #modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 800px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 15px solid #87ceeb; /* nova borda */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* sombra opcional para destacar */
+    }
+
+    h2 {
+    text-align: center;
+    margin: 50 auto 20px auto;
+    max-width: 6000px;
+    color: #2b9cd4;
+    }
+
+    #modal-body h3 {
+    text-align: center;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+    }
+
+    #search-bar {
+    margin: 20px 0;
+    text-align: left;
+    padding-right: 20px;
+    }
+
+    #search-input {
+    padding: 8px;
+    width: 300px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    }
+
+    tr:nth-child(even) td {
+    background-color: #abddf1;
+}
+
+a {
+  color: black;
+}
+
+   th{
+                    background-color:#87ceeb;
+                    padding:10px;
+                    margin-top:20px;
+                    width:30%;
+   }
+
+   td{
+                    background-color:#d0ecf7;
+                    padding:10px;
+                    margin-top:30px;
+                    width:50px;
+   }
+
+</style>
+</head>
+<body>
+  <nav>
+    <a href="recreador.html"><div class="opcao">Voltar a tela "Recreador"</div></a>
+  </nav>
+
+  <h2>LIVROS</h2>
+  <div id="search-bar">
+    <span class="material-icons">🔍</span>
+    <input type="text" id="search-input" placeholder="Pesquisar por nome do livro...">
+  </div>
+  <table id="livros-table" border="1">
+    <thead>
+      <tr>
+        <th>ID do Livro</th>
+        <th>Nome do Livro</th>
+        <th>Gênero</th>
+        <th>Quantidade em Estoque</th>
+        <th>Prateleira</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#0001</td>
+        <td><a href="#" class="detalhes-livro">Para Todos Os Garotos Que Já Amei</a></td>
+        <td>Romance</td>
+        <td>30</td>
+        <td>05</td>
+        <td>30/07/2024</td>
+      </tr>
+      <tr>
+        <td>#0002</td>
+        <td><a href="#" class="detalhes-livro2">O Cortiço</a></td>
+        <td>Naturalismo</td>
+        <td>12</td>
+        <td>03</td>
+        <td>01/08/2024</td>
+      </tr>
+      <tr>
+        <td>#0003</td>
+        <td><a href="#" class="detalhes-livro3">O Pequeno Príncipe</a></td>
+        <td>Clássico</td>
+        <td>20</td>
+        <td>02</td>
+        <td>15/09/2024</td>
+      </tr>
+      <tr>
+        <td>#0004</td>
+        <td><a href="#" class="detalhes-livro4">Matemática Básica</a></td>
+        <td>Didático</td>
+        <td>10</td>
+        <td>04</td>
+        <td>20/10/2024</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div id="modal-content">
+      <span id="close-modal">&times;</span>
+      <div id="modal-body">
+        <!-- Conteúdo será inserido por JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Livro para todos os garotos que ja amei -->
+  <script>
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    const closeModal = document.getElementById('close-modal');
+
+const conteudoLivro = `
+  <img src="img/paratodososgarotosquejaamei.jpg" title="Livro" class="hmlivro" />
+  <h3 style="margin-top: 0;">Para Todos Os Garotos Que Já Amei</h3>
+  <p>Lara Jean guarda suas cartas de amor em uma caixa azul-petróleo que ganhou da mãe. Não são cartas que ela recebeu de alguém, mas que ela mesma escreveu. Uma para cada garoto que amou — cinco ao todo. São cartas sinceras, sem joguinhos nem fingimentos, repletas de coisas que Lara Jean não diria a ninguém, confissões de seus sentimentos mais profundos.</p>
+  <p>Até que um dia essas cartas secretas são misteriosamente enviadas aos destinatários, e de uma hora para outra a vida amorosa de Lara Jean sai do papel e se transforma em algo que ela não pode mais controlar.</p><br><br><br>
+  <ul>
+    <li><strong>Autora:</strong> Jenny Han</li>
+    <li><strong>Gêneros:</strong> Ficção juvenil, Romance de amor</li>
+    <li><strong>Editora:</strong> Simon & Schuster</li>
+    <li><strong>Lançamento:</strong> 15 de abril de 2014</li>
+    </ul>
+`;
+
+    //O cortiço//
+
+const conteudoLivro2 = `
+  <img src="img/ocortico.jpg" title="Livro" class="hmlivro" />
+  <h3 style="margin-top: 0;">O Cortiço</h3>
+  <p>Pobreza, corrupção, injustiça, traição são elementos integram O cortiço, principal obra do Naturalismo brasileiro. Nela, Aluísio Azevedo denuncia as mazelas sociais enfrentadas pelos moradores de um 
+  cortiço no Rio de Janeiro no século XIX. É um romance que convida a analisar por meio da observação crítica do cotidiano das personagens a animalização do ser humano, questão que se mostra, mais do que nunca, atual.</p><br><br><br><br><br><br>
+  <ul>
+    <li><strong>Autor:</strong> Aluísio Azevedo</li>
+    <li><strong>Gêneros:</strong> Naturalismo</li>
+    <li><strong>Editora:</strong> Editoras variadas</li>
+    <li><strong>Lançamento:</strong> 1890</li>
+  </ul>
+`;
+
+       //O Pequeno Príncipe//
+
+const conteudoLivro3 = `
+  <img src="img/opequenoprincipe.jpg" title="Livro" class="hmlivro" />
+  <h3>O Pequeno Príncipe</h3>
+  <p>Nesta história que marcou gerações de leitores em todo o mundo, um piloto cai com seu avião no deserto do Saara e encontra um pequeno príncipe, 
+  que o leva a uma aventura filosófica e poética através de planetas que encerram a solidão humana.<br><br><br>
+  Um livro para todos os públicos, O pequeno príncipe é uma obra atemporal, com metáforas pertinentes e aprendizados sobre afeto, sonhos, esperança e tudo aquilo que é invisível aos olhos.</p><br><br><br><br><br>
+  <ul>
+    <li><strong>Autor:</strong> Antoine de Saint-Exupéry</li>
+    <li><strong>Gênero:</strong> Fábula, Literatura Infantil</li>
+    <li><strong>Editora:</strong> Gallimard</li>
+    <li><strong>Lançamento:</strong> abril de 1943</li>
+  </ul>
+`;
+
+      //O Livro da Matemática//
+
+const conteudoLivro4 = `
+    <img src="img/olivrodamatematica.jpg" title="Livro" class="hmlivro" />
+    <h3>O Livro da Matemática</h3>
+    <p>O livro da matemática está repleto de explicações concisas, sem jargões, que descomplicam teorias complexas e citações que facilitam a visualização e memorização dos conceitos
+    além de ilustrações que complementam e brincam com nossa compreensão dos números.</p><br><br><br><br><br><br><br><br><br><br>
+    <ul>
+      <li><strong>Autor:</strong> Vários</li>
+      <li><strong>Editora:</strong> Globo Livros</li>
+      <li><strong>Gênero:</strong> Didático</li>
+      <li><strong>Lançamento:</strong> 19 outubro 2020</li>
+    </ul>
+  `;
+
+ // Função genérica para abrir o modal com o conteúdo do livro
+ function abrirModal(conteudo) {
+    modalBody.innerHTML = conteudo;
+    modal.style.display = 'block';
+  }
+
+  document.querySelectorAll('.detalhes-livro').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      abrirModal(conteudoLivro);
+    });
+  });
+
+  document.querySelectorAll('.detalhes-livro2').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      abrirModal(conteudoLivro2);
+    });
+  });
+
+  document.querySelectorAll('.detalhes-livro3').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      abrirModal(conteudoLivro3);
+    });
+  });
+
+  document.querySelectorAll('.detalhes-livro4').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      abrirModal(conteudoLivro4);
+    });
+  });
+
+  // Fecha o modal ao clicar no X
+  closeModal.onclick = function () {
+    modal.style.display = 'none';
+  };
+
+  // Fecha o modal ao clicar fora dele
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  // Filtro de busca na tabela
+  document.getElementById('search-input').addEventListener('keyup', function () {
+    const searchValue = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#livros-table tbody tr');
+    rows.forEach(row => {
+      const livro = row.cells[1].textContent.toLowerCase();
+      row.style.display = livro.includes(searchValue) ? '' : 'none';
+    });
+  });
+
+</script>
+</body>
+</html>

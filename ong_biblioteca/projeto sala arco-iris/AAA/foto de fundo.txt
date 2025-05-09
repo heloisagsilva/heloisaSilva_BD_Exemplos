@@ -1,0 +1,27 @@
+
+CSS
+
+
+/* Definindo a imagem de fundo para o corpo da página */
+body {
+  background-image: url('imagem-de-fundo.jpg'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Faz com que a imagem cubra toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* Faz com que a imagem de fundo fique fixa enquanto o conteúdo rola */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.5rem;
+}

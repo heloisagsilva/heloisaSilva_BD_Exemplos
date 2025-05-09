@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/*CONFIGURAÇÃO GERAL*/
+body{
+	    font-family: "Candara", sans-serif;
+      background-image: url("https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEX61jLjemAj36OxaBi0duj%2BxIBPBccD9gwmXtjhyCmsdnBQFhSTO6dEY3rnZhOLqkyKxb3J0xVmcoWjZGLprFf%2F%2FWxwcsdAv0hXsZlcDEm3zSLEwlUpnwICcIKDVEa41r0HmhwnO%2BR2xkapcpjOxOaSRz%2B2rc8Ee%2BqXPiNQ6dBaKr2PnaFQGDAM4URG9FdmWG%2FBxNYWjs%2FYK6OXChXOeQXMGwkvq%2FbqjyLcPtW5pqmX55nObgivmYalZ8PGKOPGoxZ85CHb1lOcxZhFUe0RIrrtPuAsAMENrK7BtGwc0g53Hr5aIzzohQ2daxq%2BVjINWg2c35kjmSTsXqajeRt9gxkKqBCuiimlaIrhQLw8PSrJy7ahfyqYHCwPhVMy6bsnbxftr8aByHa6KLiZaslypxCqe6jJhhe4OwLx9%2BWz6OIrO8in0d%2FMgK5RJQOCeJnNGOwXQAnLvkecDMgOHdtLbBfDVn2mCMfQIMHxCIbxRpRzTcdrOIIqa%2BuRrQDrPvNEDtjlNsdBNC6IaGoa2T0a0QFTsSHbH0jePZjKlWpZsxp9aeRnE1T%2FFdzBgZ9F5Tg%2Byj4b9aESxTURO23D8g%3D%3D&allow_caching=true&sz=w512");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      margin: 0;
+      padding:0;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+/*CABEÇALHO*/
+header{
+        height: 150px;
+        width: 1000px;
+        border-radius: 50px;
+        background-color: #85ccea;
+        margin: 30px auto;
+      }
+
+header h1{
+           color: #4a3092; 
+           text-align: center;
+           font-size: 47px;
+           float: left;
+           margin: 36px 225px 30px;
+         }
+
+
+/* BOTÕES */
+nav{
+    clear: both;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin: 5px 0;
+    flex-wrap: wrap;
+   }
+
+nav a{
+       color:black;
+       text-decoration: none;
+       text-align: center;
+       float:left;
+       font-size: 25px;
+       height: 110px;
+       width: 360px;
+       border-radius: 50px;
+       background-color: #85ccea;
+       margin: 50px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+
+nav a:hover{
+             background-color: #72b0cf;
+           }
+
+.logo{
+   float:right;
+   height:130px;
+   width:130px;
+
+}
