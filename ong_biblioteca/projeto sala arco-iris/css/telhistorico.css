@@ -184,7 +184,7 @@ input[type="text"] {
     width: 350px;             /* Largura do campo */
     padding: 10px;            /* Espaçamento interno */
     font-size: 16px;          /* Tamanho da fonte */
-    display: block;           /* Faz o rótulo ocupar uma linha inteira, garantindo que fique acima do campo */
+    display: flex;           /* Faz o rótulo ocupar uma linha inteira, garantindo que fique acima do campo */
     margin-bottom: 10px;
     border: 2px solid #bbe2f1; /* Cor da borda */
     border-radius: 20px;      /* Bordas arredondadas */
@@ -194,19 +194,26 @@ input[type="text"] {
   }
   
 /*CAMPOS DO TIPO DATA*/
+  .linha_dupla  {
+    display: flex;
+    gap: 70px; /* espaçamento entre os campos */
+    justify-content: space-between;
+}     
+
+  .linha-dupla .input-group {
+    flex: 1;
+  }
+
   input[type="date"] {
-    width: 120px;             /* Largura do campo */
+    width: 150px;             /* Largura do campo */
     padding: 10px;            /* Espaçamento interno */
-    font-size: 16px;          /* Tamanho da fonte */      
+    font-size: 16px;          /* Tamanho da fonte */
     border: 2px solid #bbe2f1; /* Cor da borda */
-    margin-bottom: 5px; 
-    margin-top: 10px;  
-    display: block;
     border-radius: 20px;      /* Bordas arredondadas */
     background-color: #f0f8ff; /* Cor de fundo */
     color: #000000;              /* Cor do texto */
-    transition: all 0.3s ease; /* Transição suave para o foco */
   }
+
   
   /*BOTÕES DE RENOVAR E DEVOLVIDO*/
   .btn {
@@ -217,15 +224,14 @@ input[type="text"] {
     border-radius: 25px;  
     font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
     text-align: center;
     min-width: 200px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 95px;
     margin-right: 95px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .btn.glow {

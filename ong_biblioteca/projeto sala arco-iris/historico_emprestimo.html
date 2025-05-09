@@ -38,7 +38,7 @@
                   <tr>
                     <td>0003</td>
                     <td><a href="#" class="detalhes-livro3">O Pequeno Príncipe</a></td>
-                    <td> Mateus Dela </td>
+                    <td> Matheus Dela </td>
                     <td>19/03/2025</td>
                     <td>26/03/2025</td>
                   </tr>
@@ -77,11 +77,17 @@
     <label for="nome"> Nome do livro:</label>
     <input type="text" id="nome" name="nome">
 
-    <label for="data">Emprestimo:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="linha-dupla">
+                    <div class="input-group">
+                        <p>Emprestimo:</p>
+                        <input type="date" name="data" required>
+                    </div>
 
-    <label for="data">Devolução:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="input-group">
+                        <p>Devolução:</p>
+                        <input type="date" name="devolucao" required>
+                    </div>
+                </div>
 
     <div class="botao">
             <button type="submit" class="btn"> RENOVAR </button>
@@ -89,8 +95,7 @@
         </div>
   </form>
 `;
-
-
+  
     //O cortiço//
 
 const conteudoLivro2 = `
@@ -103,11 +108,17 @@ const conteudoLivro2 = `
     <label for="nome"> Nome do livro:</label>
     <input type="text" id="nome" name="nome">
 
-    <label for="data">Emprestimo:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="linha-dupla">
+                    <div class="input-group">
+                        <p>Emprestimo:</p>
+                        <input type="date" name="data" required>
+                    </div>
 
-    <label for="data">Devolução:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="input-group">
+                        <p>Devolução:</p>
+                        <input type="date" name="devolucao" required>
+                    </div>
+                </div>
 
     <div class="botao">
             <button type="submit" class="btn"> RENOVAR </button>
@@ -122,17 +133,23 @@ const conteudoLivro3 = `
   <img src="img/opequenoprincipe.jpg" title="Livro" class="hmlivro" />
     <h3 style="margin-top: 0;"> RENOVAÇÃO OU DEVOLUÇÃO </h3>
 
-    <label for="nome">Nome do cliente :</label>
+   <label for="nome">Nome do cliente :</label>
     <input type="text" id="nome" name="nome";>
 
     <label for="nome"> Nome do livro:</label>
     <input type="text" id="nome" name="nome">
 
-    <label for="data">Emprestimo:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="linha-dupla">
+                    <div class="input-group">
+                        <p>Emprestimo:</p>
+                        <input type="date" name="data" required>
+                    </div>
 
-    <label for="data">Devolução:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="input-group">
+                        <p>Devolução:</p>
+                        <input type="date" name="devolucao" required>
+                    </div>
+                </div>
 
     <div class="botao">
             <button type="submit" class="btn"> RENOVAR </button>
@@ -145,7 +162,7 @@ const conteudoLivro3 = `
 
 const conteudoLivro4 = `
     <img src="img/olivrodamatematica.jpg" title="Livro" class="hmlivro" />
-      <h3 style="margin-top: 0;"> RENOVAÇÃO OU DEVOLUÇÃO </h3>
+    <h3 style="margin-top: 0;"> RENOVAÇÃO OU DEVOLUÇÃO </h3>
 
   <label for="nome">Nome do cliente :</label>
     <input type="text" id="nome" name="nome";>
@@ -153,11 +170,17 @@ const conteudoLivro4 = `
     <label for="nome"> Nome do livro:</label>
     <input type="text" id="nome" name="nome">
 
-    <label for="data">Emprestimo:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="linha-dupla">
+                    <div class="input-group">
+                        <p>Emprestimo:</p>
+                        <input type="date" name="data" required>
+                    </div>
 
-    <label for="data">Devolução:</label><br>
-    <input type="date" id="data" name="data">
+    <div class="input-group">
+                        <p>Devolução:</p>
+                        <input type="date" name="devolucao" required>
+                    </div>
+                </div>
 
     <div class="botao">
             <button type="submit" class="btn"> RENOVAR </button>
