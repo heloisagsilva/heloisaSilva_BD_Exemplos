@@ -1,0 +1,1 @@
+select NomeVendedor, (SalarioFixo * 1.75 + 120) as 'Novo Salário Fixo', FaixaComissao from Vendedor where FaixaComissao = 'C' order by NomeVendedor;

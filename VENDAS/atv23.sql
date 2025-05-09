@@ -1,0 +1,1 @@
+select count(NomeVendedor) as 'Quantidade de Salários Maior que 2500' from Vendedor where SalarioFixo >= 2500;

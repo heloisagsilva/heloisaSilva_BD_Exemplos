@@ -1,0 +1,1 @@
+select Cod_Produto, sum(QtdeProduto) as 'Quantidade Total' from Item_Pedido where Cod_Produto = '78';

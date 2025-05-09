@@ -1,0 +1,1 @@
+select NomeCliente, UF, Cidade from Cliente order by UF desc, Cidade desc;

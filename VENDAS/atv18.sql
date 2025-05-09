@@ -1,0 +1,1 @@
+select DescProduto, ValorUnitario from Produto where UnitProduto = 'm' order by ValorUnitario asc;
