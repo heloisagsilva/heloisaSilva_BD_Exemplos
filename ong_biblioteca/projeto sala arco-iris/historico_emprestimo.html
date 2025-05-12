@@ -52,11 +52,69 @@
 <!--TELA DE RENOVAÇÃO DE EMPRESTIMOS-->
 <!--Modal-->
   <div id="modal">
+<head>
+  <meta charset="UTF-8">
+  <title>ONG Biblioteca - Sala Arco-íris</title>
+  <link rel="stylesheet" type="text/css" href="css/telhistorico.css" />
+</head>
+<body>
+  <header>
+    <h1>Histórico de Empréstimos</h1>
+  </header>
+
+  <nav>
+    <table id="livros-table" border="1">
+      <thead>
+        <tr>
+          <th>CÓDIGO EMPRÉSTIMO</th>
+          <th>NOME DO LIVRO</th>
+          <th>NOME CLIENTE</th>
+          <th>EMPRÉSTIMO</th>
+          <th>DEVOLUÇÃO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0001</td>
+          <td><a href="#" class="detalhes-livro">Para Todos Os Garotos Que Já Amei</a></td>
+          <td>Helena Lopes</td>
+          <td>25/02/2025</td>
+          <td>02/02/2025</td>
+        </tr>
+        <tr>
+          <td>0002</td>
+          <td><a href="#" class="detalhes-livro2">O Cortiço</a></td>
+          <td>Ruan Melo</td>
+          <td>11/03/2025</td>
+          <td>18/03/2025</td>
+        </tr>
+        <tr>
+          <td>0003</td>
+          <td><a href="#" class="detalhes-livro3">O Pequeno Príncipe</a></td>
+          <td>Matheus Dela</td>
+          <td>19/03/2025</td>
+          <td>26/03/2025</td>
+        </tr>
+        <tr>
+          <td>0004</td>
+          <td><a href="#" class="detalhes-livro4">Matemática Básica</a></td>
+          <td>Mateus Rodrigues</td>
+          <td>04/04/2025</td>
+          <td>18/04/2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </nav>
+
+  <!-- Modal -->
+  <div id="modal" style="display:none;">
     <div id="modal-content">
       <span id="close-modal">&times;</span>
       <div id="modal-body">
         <!-- Conteúdo será inserido por JavaScript -->
       </div>
+      <span id="close-modal" style="cursor:pointer;">&times;</span>
+      <div id="modal-body"></div>
     </div>
   </div>
 
@@ -220,6 +278,19 @@ const conteudoLivro4 = `
     link.addEventListener('click', function (e) {
       e.preventDefault();
       abrirModal(conteudoLivro4);
+    const livros = [
+      {
+        selector: '.detalhes-livro',
+    ];
+
+    livros.forEach(({ selector, nome, cliente, imagem }) => {
+      document.querySelectorAll(selector).forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          modalBody.innerHTML = gerarFormulario(nome, cliente, imagem);
+          modal.style.display = 'block';
+        });
+      });
     });
   });
 
@@ -234,6 +305,7 @@ const conteudoLivro4 = `
       modal.style.display = 'none';
     }
   };
+    closeModal.onclick = () => modal.style.display = 'none';
 
     </script>
   </tr>
@@ -241,4 +313,11 @@ const conteudoLivro4 = `
   </table>
       </nav> 
     </body>
-  </html>         
+  </html>             window.onclick = event => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
