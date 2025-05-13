@@ -194,7 +194,6 @@ input[type="text"] {
   }
   
 /*CAMPOS DO TIPO DATA*/
-  .linha_dupla  {
   .linha-dupla  {
     display: flex;
     gap: 70px; /* espaçamento entre os campos */
